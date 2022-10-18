@@ -6,6 +6,7 @@
 
 body {
 	background-color: antiquewhite;
+	background: url("https://images4.alphacoders.com/741/thumb-1920-74166.jpg")
 }
 
 h1 {
@@ -16,9 +17,18 @@ h1 {
 
 #Texte {
 	font-style: italic;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 130px;
+	color: white;
 }
 
 button {
 	-webkit-box-shadow: 15px 10px 15px 5px #000000; 
 	box-shadow: 15px 10px 15px 5px #000000;
+}
+
+p, h3 {
+	color: antiquewhite;
 }
