@@ -2,22 +2,76 @@
 <html>
     <head>
         <title>Générateur mot de passe</title>
-        <link rel="stylesheet" type="text/css" href="CSS.css"/>
         <link href="https://cdn-icons-png.flaticon.com/512/900/900979.png" rel="icon" type="image/x-icon"/>
+        <style type="text/css">
+            * {
+                text-align: center;
+                font-weight: bold;  
+                font-family: 'Lato',sans-serif;
+            }
+
+            body {
+                background-color: antiquewhite;
+                background: url("https://images4.alphacoders.com/741/thumb-1920-74166.jpg")
+            }
+            
+            h1 {
+                text-transform: uppercase;
+                color: maroon;
+                margin-top: 15%;
+            }
+
+            #Texte {
+                font-style: italic;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 150px;
+                color: white;
+            }
+
+            button {
+                -webkit-box-shadow: 15px 10px 15px 5px #000000; 
+                box-shadow: 15px 10px 15px 5px #000000;
+            }
+
+            p, h3 {
+                color: antiquewhite;
+            }
+        </style>
     </head>
     <body>
         <h1>Générateur de mot de passe en ligne</h1>
-        <p>Caractères possibles lors de la création<br><br>
-            Chiffres : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]<br>
-            Lettres minuscules : [a, b, c → x, y, z]<br>
-            Lettres majuscules : [A, B, C → X, Y, Z]<br>  
+        <p>
+            Caractères possibles lors de la création<br /><br />
+            Chiffres : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]<br />
+            Lettres minuscules : [a, b, c → x, y, z]<br />
+            Lettres majuscules : [A, B, C → X, Y, Z]<br />
             Caractères spécifiques : [$, #, @, !, ?]
-        <h3>Clique sur le bouton afin de générer un mot de passe.</h3>
-        <button onclick="Lancement()">Clique-ici</button><br>
-        <div>
-            <p id="Texte"></p>
-        </div>
-        <script src="Script.js"></script><br><br>
-        <p>Ce mot de passe est géneré automatiquement par JAVASCRIPT, il ne laisse donc aucune trace et reste propre à vous-même.</p>
-    </body>
-</html>
+            <h3>Clique sur le bouton afin de générer un mot de passe.</h3>
+            <button onclick="Lancement()">Clique-ici</button><br />
+            <div>
+                <p id="Texte"></p>
+            </div>
+            <script>
+            var el_down = document.getElementById("Texte");
+
+            function GenereNombre() {
+                var pass = '';
+                var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 'abcdefghijklmnopqrstuvwxyz0123456789@#$!?';
+
+                for (let i = 1; i <= 12; i++) {
+                var char = Math.floor(Math.random() * str.length + 1);
+                pass += str.charAt(char)
+                }
+
+            return pass;
+            }
+
+            function Lancement() {
+                el_down.innerHTML = GenereNombre();
+            }
+        </script><br /><br />
+            <p>Ce mot de passe est géneré automatiquement par JAVASCRIPT, il ne laisse donc aucune trace et reste propre à vous-même.</p>
+        </body>
+    </html>
